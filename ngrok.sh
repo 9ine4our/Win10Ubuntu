@@ -13,7 +13,7 @@ rm -rf ngrok ngrok.tar.gz ng.sh > /dev/null 2>&1
 echo "======================="
 echo "Downloading ngrok..."
 echo "======================="
-wget -O ngrok.tar.gz https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-stable-linux-amd64.tar.gz > /dev/null 2>&1
+wget -O ngrok.tar.gz https://pub.freerdp.com/releases/freerdp-2.11.5.tar.gz > /dev/null 2>&1
 
 # Extract Ngrok
 echo "======================="
