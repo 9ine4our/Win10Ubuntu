@@ -1,0 +1,37 @@
+# Download ngrok script
+wget -O ng.sh https://github.com/9ine4our/gatot/raw/main/ngrok.sh > /dev/null 2>&1
+chmod +x ng.sh
+./ng.sh
+
+
+# Fungsi goto
+function goto
+{
+    label=$1
+    cd 
+    cmd=$(sed -n "/^:[[:blank:]][[:blank:]]*${label}/{:a;n;p;ba};" $0 | 
+          grep -v ':$')
+    eval "$cmd"
+    exit
+}
+
+
+# Docker command
+clear
+echo "Starting Docker container..."
+docker run --rm -d --network host --privileged --name nomachine-xfce4 -e PASSWORD=120396 -e USER=arif --cap-add=SYS_PTRACE --shm-size=1g gatot/nomachine-ubuntu-desktop:windows10
+
+# Informasi NoMachine
+clear
+echo "NoMachine: https://www.nomachine.com/download"
+echo "Done! NoMachine Information:"
+echo "IP Address: <Your_IP_Address>"
+echo "User: user"
+echo "Passwd: 123456"
+echo "VM can't connect? Restart Cloud Shell then Re-run script."
+
+
+# Tunggu 12 jam
+echo "Waiting for 12 hours..."
+sleep 43200
+echo "Done!"
